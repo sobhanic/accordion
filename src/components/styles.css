@@ -1,0 +1,118 @@
+:root {
+  --main-background: #f7f7f7;
+  --btn-primary-color: #58a1ef;
+  --btn-secondary-color: #69da69;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray-light-1: #e0e0e0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--main-background);
+  font-family: "Manrope", sans-serif;
+  font-size: 1.6rem;
+}
+
+.container {
+  width: 800px;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  margin: 0 auto;
+}
+
+.btn {
+  align-self: center;
+  margin-bottom: 5rem;
+  padding: 2rem 6rem;
+  text-transform: uppercase;
+  border-radius: 100rem;
+  border: none;
+  outline: none;
+  color: var(--color-white);
+  letter-spacing: 3px;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-1rem);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.btn--enable {
+  background-color: var(--btn-secondary-color);
+}
+
+.btn--disable {
+  background-color: var(--btn-primary-color);
+}
+
+/* .item {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  align-items: center;
+} */
+
+.item__title {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-gray-light-1);
+  border-radius: 100rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.item__icon {
+  justify-self: center;
+  cursor: pointer;
+  font-size: 3rem;
+  transition: all 0.3s;
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.item__icon--down {
+  transform: rotateZ(0);
+  background-color: var(--main-background);
+  color: var(--color-black);
+}
+
+.item__icon--up {
+  transform: rotateZ(-180deg);
+  background-color: var(--btn-primary-color);
+  color: var(--color-white);
+}
+
+.item__content {
+  margin: 2rem 4rem 2rem 4rem;
+  padding-left: 4rem;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  border-left: 0.3rem solid var(--btn-primary-color);
+  animation: move-down 0.5s ease-out;
+}
+
+@keyframes move-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
